@@ -1,0 +1,31 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sources_1/new/thresh_sobel_pipe_stage.v"
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sources_1/new/pipe_stage_MAC_sharp.v"
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sources_1/new/pipe_stage_MAC_gblur.v"
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sources_1/new/pipe_stage_MAC.v"
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sources_1/new/pipe_stage_conv_sharp.v"
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sources_1/new/pipe_stage_conv_gblur.v"
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sources_1/new/pipe_stage_conv.v"
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sources_1/new/pipe_stage_buff_gblur.v"
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sources_1/new/mac_sobel_pipe_stage.v"
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sources_1/new/con_sobel_pipe_stage.v"
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sources_1/new/line_buffer.v"
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sources_1/new/inversion.v"
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sources_1/new/contrast_inc.v"
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sources_1/new/contrast_dec.v"
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sources_1/new/sobel_filter.v"
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sources_1/new/sharpen_filter.v"
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sources_1/new/rgb2gray.v"
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sources_1/new/gaussian_blur_filter.v"
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sources_1/new/box_blur_filter.v"
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sources_1/new/line_buffer_controller.v"
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sources_1/new/point_processing.v"
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sources_1/new/neighborhood_processing.v"
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sources_1/new/image_processing_top.v"
+verilog xil_defaultlib  "../../../Image_Processing.srcs/sim_1/new/tb.v"
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

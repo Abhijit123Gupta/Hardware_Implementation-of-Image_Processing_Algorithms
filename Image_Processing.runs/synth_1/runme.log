@@ -1,0 +1,478 @@
+
+*** Running vivado
+    with args -log image_processing_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source image_processing_top.tcl
+
+
+****** Vivado v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source image_processing_top.tcl -notrace
+Command: synth_design -top image_processing_top -part xa7a12tcpg238-2I
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xa7a12t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xa7a12t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 11456 
+WARNING: [Synth 8-2507] parameter declaration becomes local in line_buffer with formal parameter declaration list [G:/verilog_files/Image_Processing/Image_Processing.srcs/sources_1/new/line_buffer.v:33]
+WARNING: [Synth 8-2507] parameter declaration becomes local in line_buffer_controller with formal parameter declaration list [G:/verilog_files/Image_Processing/Image_Processing.srcs/sources_1/new/line_buffer_controller.v:39]
+WARNING: [Synth 8-2507] parameter declaration becomes local in line_buffer_controller with formal parameter declaration list [G:/verilog_files/Image_Processing/Image_Processing.srcs/sources_1/new/line_buffer_controller.v:40]
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 517.211 ; gain = 230.742
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'image_processing_top' [G:/verilog_files/Image_Processing/Image_Processing.srcs/sources_1/new/image_processing_top.v:24]
+	Parameter imageWidth bound to: 512 - type: integer 
+	Parameter imageHeight bound to: 512 - type: integer 
+	Parameter processingType bound to: neighborhood - type: string 
+	Parameter filterType bound to: boxBlur - type: string 
+INFO: [Synth 8-6157] synthesizing module 'neighborhood_processing' [G:/verilog_files/Image_Processing/Image_Processing.srcs/sources_1/new/neighborhood_processing.v:23]
+	Parameter imgWidth bound to: 512 - type: integer 
+	Parameter imgHeight bound to: 512 - type: integer 
+	Parameter filterType bound to: boxBlur - type: string 
+INFO: [Synth 8-6157] synthesizing module 'box_blur_filter' [G:/verilog_files/Image_Processing/Image_Processing.srcs/sources_1/new/box_blur_filter.v:23]
+INFO: [Synth 8-6157] synthesizing module 'pipe_stage_MAC' [G:/verilog_files/Image_Processing/Image_Processing.srcs/sources_1/new/pipe_stage_MAC.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'pipe_stage_MAC' (1#1) [G:/verilog_files/Image_Processing/Image_Processing.srcs/sources_1/new/pipe_stage_MAC.v:23]
+INFO: [Synth 8-6157] synthesizing module 'pipe_stage_conv' [G:/verilog_files/Image_Processing/Image_Processing.srcs/sources_1/new/pipe_stage_conv.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'pipe_stage_conv' (2#1) [G:/verilog_files/Image_Processing/Image_Processing.srcs/sources_1/new/pipe_stage_conv.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'box_blur_filter' (3#1) [G:/verilog_files/Image_Processing/Image_Processing.srcs/sources_1/new/box_blur_filter.v:23]
+INFO: [Synth 8-6157] synthesizing module 'rgb2gray' [G:/verilog_files/Image_Processing/Image_Processing.srcs/sources_1/new/rgb2gray.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'rgb2gray' (4#1) [G:/verilog_files/Image_Processing/Image_Processing.srcs/sources_1/new/rgb2gray.v:23]
+INFO: [Synth 8-6157] synthesizing module 'line_buffer_controller' [G:/verilog_files/Image_Processing/Image_Processing.srcs/sources_1/new/line_buffer_controller.v:23]
+	Parameter imgWidth bound to: 512 - type: integer 
+	Parameter imgHeight bound to: 512 - type: integer 
+	Parameter cnt_depth bound to: 9 - type: integer 
+	Parameter tot_cnt_depth bound to: 18 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'line_buffer' [G:/verilog_files/Image_Processing/Image_Processing.srcs/sources_1/new/line_buffer.v:23]
+	Parameter imgWidth bound to: 512 - type: integer 
+	Parameter imgHeight bound to: 512 - type: integer 
+	Parameter ptr_depth bound to: 9 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'line_buffer' (5#1) [G:/verilog_files/Image_Processing/Image_Processing.srcs/sources_1/new/line_buffer.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'line_buffer_controller' (6#1) [G:/verilog_files/Image_Processing/Image_Processing.srcs/sources_1/new/line_buffer_controller.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'neighborhood_processing' (7#1) [G:/verilog_files/Image_Processing/Image_Processing.srcs/sources_1/new/neighborhood_processing.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'image_processing_top' (8#1) [G:/verilog_files/Image_Processing/Image_Processing.srcs/sources_1/new/image_processing_top.v:24]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 565.926 ; gain = 279.457
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 565.926 ; gain = 279.457
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xa7a12tcpg238-2I
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 565.926 ; gain = 279.457
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xa7a12tcpg238-2I
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [G:/verilog_files/Image_Processing/Image_Processing.srcs/sources_1/new/line_buffer_controller.v:61]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 565.926 ; gain = 279.457
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   9 Input     16 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 14    
+	   6 Input      8 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	               16 Bit    Registers := 8     
+	               10 Bit    Registers := 6     
+	                8 Bit    Registers := 3     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   4 Input     72 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module pipe_stage_MAC 
+Detailed RTL Component Info : 
++---Adders : 
+	   9 Input     16 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 8     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module pipe_stage_conv 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module rgb2gray 
+Detailed RTL Component Info : 
++---Adders : 
+	   6 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module line_buffer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 3     
++---Registers : 
+	               10 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module line_buffer_controller 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     72 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 40 (col length:40)
+BRAMs: 40 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design image_processing_top has unconnected port i_data[19]
+WARNING: [Synth 8-3331] design image_processing_top has unconnected port i_data[18]
+WARNING: [Synth 8-3331] design image_processing_top has unconnected port i_data[17]
+WARNING: [Synth 8-3331] design image_processing_top has unconnected port i_data[16]
+WARNING: [Synth 8-3331] design image_processing_top has unconnected port i_data[8]
+WARNING: [Synth 8-3331] design image_processing_top has unconnected port i_data[1]
+WARNING: [Synth 8-3331] design image_processing_top has unconnected port i_data[0]
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb0/rd_ptr_reg_rep[5]' (FDRE) to 'np/ctrl/lb0/rd_ptr_reg[5]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb0/rd_ptr_reg_rep[4]' (FDRE) to 'np/ctrl/lb0/rd_ptr_reg[4]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb0/rd_ptr_reg_rep[3]' (FDRE) to 'np/ctrl/lb0/rd_ptr_reg[3]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb0/rd_ptr_reg_rep[2]' (FDRE) to 'np/ctrl/lb0/rd_ptr_reg[2]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb0/rd_ptr_reg_rep[1]' (FDRE) to 'np/ctrl/lb0/rd_ptr_reg[1]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb0/rd_ptr_reg_rep[0]' (FDRE) to 'np/ctrl/lb0/rd_ptr_reg[0]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb1/rd_ptr_reg_rep[5]' (FDRE) to 'np/ctrl/lb1/rd_ptr_reg[5]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb1/rd_ptr_reg_rep[4]' (FDRE) to 'np/ctrl/lb1/rd_ptr_reg[4]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb1/rd_ptr_reg_rep[3]' (FDRE) to 'np/ctrl/lb1/rd_ptr_reg[3]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb1/rd_ptr_reg_rep[2]' (FDRE) to 'np/ctrl/lb1/rd_ptr_reg[2]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb1/rd_ptr_reg_rep[1]' (FDRE) to 'np/ctrl/lb1/rd_ptr_reg[1]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb1/rd_ptr_reg_rep[0]' (FDRE) to 'np/ctrl/lb1/rd_ptr_reg[0]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb2/rd_ptr_reg_rep[5]' (FDRE) to 'np/ctrl/lb2/rd_ptr_reg[5]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb2/rd_ptr_reg_rep[4]' (FDRE) to 'np/ctrl/lb2/rd_ptr_reg[4]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb2/rd_ptr_reg_rep[3]' (FDRE) to 'np/ctrl/lb2/rd_ptr_reg[3]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb2/rd_ptr_reg_rep[2]' (FDRE) to 'np/ctrl/lb2/rd_ptr_reg[2]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb2/rd_ptr_reg_rep[1]' (FDRE) to 'np/ctrl/lb2/rd_ptr_reg[1]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb2/rd_ptr_reg_rep[0]' (FDRE) to 'np/ctrl/lb2/rd_ptr_reg[0]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb3/rd_ptr_reg_rep[5]' (FDRE) to 'np/ctrl/lb3/rd_ptr_reg[5]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb3/rd_ptr_reg_rep[4]' (FDRE) to 'np/ctrl/lb3/rd_ptr_reg[4]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb3/rd_ptr_reg_rep[3]' (FDRE) to 'np/ctrl/lb3/rd_ptr_reg[3]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb3/rd_ptr_reg_rep[2]' (FDRE) to 'np/ctrl/lb3/rd_ptr_reg[2]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb3/rd_ptr_reg_rep[1]' (FDRE) to 'np/ctrl/lb3/rd_ptr_reg[1]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb3/rd_ptr_reg_rep[0]' (FDRE) to 'np/ctrl/lb3/rd_ptr_reg[0]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb0/rd_ptr_reg_rep[8]' (FDRE) to 'np/ctrl/lb0/rd_ptr_reg[8]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb0/rd_ptr_reg_rep[7]' (FDRE) to 'np/ctrl/lb0/rd_ptr_reg[7]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb0/rd_ptr_reg_rep[6]' (FDRE) to 'np/ctrl/lb0/rd_ptr_reg[6]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb0/rd_ptr_reg_rep[9]' (FDRE) to 'np/ctrl/lb0/rd_ptr_reg[9]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb1/rd_ptr_reg_rep[8]' (FDRE) to 'np/ctrl/lb1/rd_ptr_reg[8]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb1/rd_ptr_reg_rep[7]' (FDRE) to 'np/ctrl/lb1/rd_ptr_reg[7]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb1/rd_ptr_reg_rep[6]' (FDRE) to 'np/ctrl/lb1/rd_ptr_reg[6]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb1/rd_ptr_reg_rep[9]' (FDRE) to 'np/ctrl/lb1/rd_ptr_reg[9]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb2/rd_ptr_reg_rep[8]' (FDRE) to 'np/ctrl/lb2/rd_ptr_reg[8]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb2/rd_ptr_reg_rep[7]' (FDRE) to 'np/ctrl/lb2/rd_ptr_reg[7]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb2/rd_ptr_reg_rep[6]' (FDRE) to 'np/ctrl/lb2/rd_ptr_reg[6]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb2/rd_ptr_reg_rep[9]' (FDRE) to 'np/ctrl/lb2/rd_ptr_reg[9]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb3/rd_ptr_reg_rep[8]' (FDRE) to 'np/ctrl/lb3/rd_ptr_reg[8]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb3/rd_ptr_reg_rep[7]' (FDRE) to 'np/ctrl/lb3/rd_ptr_reg[7]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb3/rd_ptr_reg_rep[6]' (FDRE) to 'np/ctrl/lb3/rd_ptr_reg[6]'
+INFO: [Synth 8-3886] merging instance 'np/ctrl/lb3/rd_ptr_reg_rep[9]' (FDRE) to 'np/ctrl/lb3/rd_ptr_reg[9]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[7][8]' (FDRE) to 'np/bblur.bb/mac/multData_reg[7][9]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[8][8]' (FDRE) to 'np/bblur.bb/mac/multData_reg[7][9]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[7][9]' (FDRE) to 'np/bblur.bb/mac/multData_reg[7][10]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[8][9]' (FDRE) to 'np/bblur.bb/mac/multData_reg[7][10]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[7][10]' (FDRE) to 'np/bblur.bb/mac/multData_reg[7][11]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[8][10]' (FDRE) to 'np/bblur.bb/mac/multData_reg[7][11]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[7][11]' (FDRE) to 'np/bblur.bb/mac/multData_reg[7][12]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[8][11]' (FDRE) to 'np/bblur.bb/mac/multData_reg[7][12]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[7][12]' (FDRE) to 'np/bblur.bb/mac/multData_reg[7][13]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[8][12]' (FDRE) to 'np/bblur.bb/mac/multData_reg[7][13]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[7][13]' (FDRE) to 'np/bblur.bb/mac/multData_reg[7][14]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[8][13]' (FDRE) to 'np/bblur.bb/mac/multData_reg[7][14]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[7][14]' (FDRE) to 'np/bblur.bb/mac/multData_reg[7][15]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[8][14]' (FDRE) to 'np/bblur.bb/mac/multData_reg[7][15]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[8][15]' (FDRE) to 'np/bblur.bb/mac/multData_reg[7][15]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[7][15]' (FDRE) to 'np/bblur.bb/mac/multData_reg[5][8]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[6][8]' (FDRE) to 'np/bblur.bb/mac/multData_reg[5][8]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[4][8]' (FDRE) to 'np/bblur.bb/mac/multData_reg[5][8]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[5][8]' (FDRE) to 'np/bblur.bb/mac/multData_reg[5][9]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[6][9]' (FDRE) to 'np/bblur.bb/mac/multData_reg[5][9]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[4][9]' (FDRE) to 'np/bblur.bb/mac/multData_reg[5][9]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[5][9]' (FDRE) to 'np/bblur.bb/mac/multData_reg[5][10]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[6][10]' (FDRE) to 'np/bblur.bb/mac/multData_reg[5][10]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[4][10]' (FDRE) to 'np/bblur.bb/mac/multData_reg[5][10]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[5][10]' (FDRE) to 'np/bblur.bb/mac/multData_reg[5][11]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[6][11]' (FDRE) to 'np/bblur.bb/mac/multData_reg[5][11]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[4][11]' (FDRE) to 'np/bblur.bb/mac/multData_reg[5][11]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[5][11]' (FDRE) to 'np/bblur.bb/mac/multData_reg[5][12]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[6][12]' (FDRE) to 'np/bblur.bb/mac/multData_reg[5][12]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[4][12]' (FDRE) to 'np/bblur.bb/mac/multData_reg[5][12]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[5][12]' (FDRE) to 'np/bblur.bb/mac/multData_reg[5][13]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[6][13]' (FDRE) to 'np/bblur.bb/mac/multData_reg[5][13]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[4][13]' (FDRE) to 'np/bblur.bb/mac/multData_reg[5][13]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[5][13]' (FDRE) to 'np/bblur.bb/mac/multData_reg[5][14]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[6][14]' (FDRE) to 'np/bblur.bb/mac/multData_reg[5][14]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[4][14]' (FDRE) to 'np/bblur.bb/mac/multData_reg[5][14]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[5][14]' (FDRE) to 'np/bblur.bb/mac/multData_reg[5][15]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[6][15]' (FDRE) to 'np/bblur.bb/mac/multData_reg[5][15]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[5][15]' (FDRE) to 'np/bblur.bb/mac/multData_reg[3][8]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[4][15]' (FDRE) to 'np/bblur.bb/mac/multData_reg[3][8]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[3][8]' (FDRE) to 'np/bblur.bb/mac/multData_reg[3][9]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[1][8]' (FDRE) to 'np/bblur.bb/mac/multData_reg[3][9]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[2][8]' (FDRE) to 'np/bblur.bb/mac/multData_reg[3][9]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[3][9]' (FDRE) to 'np/bblur.bb/mac/multData_reg[3][10]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[1][9]' (FDRE) to 'np/bblur.bb/mac/multData_reg[3][10]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[2][9]' (FDRE) to 'np/bblur.bb/mac/multData_reg[3][10]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[3][10]' (FDRE) to 'np/bblur.bb/mac/multData_reg[3][11]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[1][10]' (FDRE) to 'np/bblur.bb/mac/multData_reg[3][11]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[2][10]' (FDRE) to 'np/bblur.bb/mac/multData_reg[3][11]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[3][11]' (FDRE) to 'np/bblur.bb/mac/multData_reg[3][12]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[1][11]' (FDRE) to 'np/bblur.bb/mac/multData_reg[3][12]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[2][11]' (FDRE) to 'np/bblur.bb/mac/multData_reg[3][12]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[3][12]' (FDRE) to 'np/bblur.bb/mac/multData_reg[3][13]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[1][12]' (FDRE) to 'np/bblur.bb/mac/multData_reg[3][13]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[2][12]' (FDRE) to 'np/bblur.bb/mac/multData_reg[3][13]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[3][13]' (FDRE) to 'np/bblur.bb/mac/multData_reg[3][14]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[1][13]' (FDRE) to 'np/bblur.bb/mac/multData_reg[3][14]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[2][13]' (FDRE) to 'np/bblur.bb/mac/multData_reg[3][14]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[3][14]' (FDRE) to 'np/bblur.bb/mac/multData_reg[3][15]'
+INFO: [Synth 8-3886] merging instance 'np/bblur.bb/mac/multData_reg[1][14]' (FDRE) to 'np/bblur.bb/mac/multData_reg[3][15]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\np/bblur.bb/mac/multData_reg[1][15] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:28 . Memory (MB): peak = 773.770 ; gain = 487.301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping	Report (see note below)
++---------------------+------------------------+-----------+----------------------+----------------------------+
+|Module Name          | RTL Object             | Inference | Size (Depth x Width) | Primitives                 | 
++---------------------+------------------------+-----------+----------------------+----------------------------+
+|image_processing_top | np/ctrl/lb0/buffer_reg | Implied   | 1 K x 8              | RAM64X1D x 54	RAM64M x 54	 | 
+|image_processing_top | np/ctrl/lb1/buffer_reg | Implied   | 1 K x 8              | RAM64X1D x 54	RAM64M x 54	 | 
+|image_processing_top | np/ctrl/lb2/buffer_reg | Implied   | 1 K x 8              | RAM64X1D x 54	RAM64M x 54	 | 
+|image_processing_top | np/ctrl/lb3/buffer_reg | Implied   | 1 K x 8              | RAM64X1D x 54	RAM64M x 54	 | 
++---------------------+------------------------+-----------+----------------------+----------------------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:28 . Memory (MB): peak = 774.586 ; gain = 488.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping	Report
++---------------------+------------------------+-----------+----------------------+----------------------------+
+|Module Name          | RTL Object             | Inference | Size (Depth x Width) | Primitives                 | 
++---------------------+------------------------+-----------+----------------------+----------------------------+
+|image_processing_top | np/ctrl/lb0/buffer_reg | Implied   | 1 K x 8              | RAM64X1D x 54	RAM64M x 54	 | 
+|image_processing_top | np/ctrl/lb1/buffer_reg | Implied   | 1 K x 8              | RAM64X1D x 54	RAM64M x 54	 | 
+|image_processing_top | np/ctrl/lb2/buffer_reg | Implied   | 1 K x 8              | RAM64X1D x 54	RAM64M x 54	 | 
+|image_processing_top | np/ctrl/lb3/buffer_reg | Implied   | 1 K x 8              | RAM64X1D x 54	RAM64M x 54	 | 
++---------------------+------------------------+-----------+----------------------+----------------------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:29 . Memory (MB): peak = 774.824 ; gain = 488.355
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:34 . Memory (MB): peak = 774.824 ; gain = 488.355
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:34 . Memory (MB): peak = 774.824 ; gain = 488.355
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:34 . Memory (MB): peak = 774.824 ; gain = 488.355
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:34 . Memory (MB): peak = 774.824 ; gain = 488.355
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:34 . Memory (MB): peak = 774.824 ; gain = 488.355
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:34 . Memory (MB): peak = 774.824 ; gain = 488.355
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |    21|
+|3     |LUT1     |    15|
+|4     |LUT2     |    42|
+|5     |LUT3     |   170|
+|6     |LUT4     |    62|
+|7     |LUT5     |   108|
+|8     |LUT6     |   455|
+|9     |MUXF7    |    11|
+|10    |MUXF8    |     3|
+|11    |RAM64M   |   208|
+|12    |RAM64X1D |   208|
+|13    |FDRE     |   210|
+|14    |IBUF     |    21|
+|15    |OBUF     |    10|
++------+---------+------+
+
+Report Instance Areas: 
++------+---------------+------------------------+------+
+|      |Instance       |Module                  |Cells |
++------+---------------+------------------------+------+
+|1     |top            |                        |  1545|
+|2     |  np           |neighborhood_processing |  1513|
+|3     |    \bblur.bb  |box_blur_filter         |   267|
+|4     |      con      |pipe_stage_conv         |    12|
+|5     |      mac      |pipe_stage_MAC          |   255|
+|6     |    ctrl       |line_buffer_controller  |  1202|
+|7     |      lb0      |line_buffer             |   276|
+|8     |      lb1      |line_buffer_0           |   276|
+|9     |      lb2      |line_buffer_1           |   252|
+|10    |      lb3      |line_buffer_2           |   276|
+|11    |    r2g1       |rgb2gray                |    44|
++------+---------------+------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:34 . Memory (MB): peak = 774.824 ; gain = 488.355
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 10 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:34 . Memory (MB): peak = 774.824 ; gain = 488.355
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:34 . Memory (MB): peak = 774.824 ; gain = 488.355
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 786.715 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 451 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 844.414 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 416 instances were transformed.
+  RAM64M => RAM64M (RAMD64E(x4)): 208 instances
+  RAM64X1D => RAM64X1D (RAMD64E(x2)): 208 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+128 Infos, 10 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:46 . Memory (MB): peak = 844.414 ; gain = 557.945
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 844.414 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'G:/verilog_files/Image_Processing/Image_Processing.runs/synth_1/image_processing_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file image_processing_top_utilization_synth.rpt -pb image_processing_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Dec 13 16:27:46 2020...
